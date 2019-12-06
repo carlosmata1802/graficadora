@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Login from './components/Login';
 import axios from "axios";
+import ListaGraficas from './components/ListaGraficas';
 
 const fetchLogin = async () => {
     let user = "rperedo";
@@ -42,6 +43,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/home" component={Home} />
+          <Route exact path="/listaGraficas" component={ListaGraficas} />
           <Route exact path="/" component={Login} />
         </Switch>
       </Router>

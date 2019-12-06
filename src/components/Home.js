@@ -10,7 +10,14 @@ const Home = () => {
         mensaje: ''
     });
     const [functionToGraph, setFunctionToGraph] = useState('');
-    
+    const [infoToSave, setIntoToSave] = useState({
+        function: '',
+        limiteInferior: '', 
+        limiteSuperior: '',
+        derivada: '',
+        area: ''
+    });
+
     useEffect(()=> {
         if (functionToGraph === "") return;
     }, [functionToGraph, error])
@@ -24,7 +31,8 @@ const Home = () => {
             return 0; 
         }
 
-        setFunctionToGraph(data.functionToGraph)
+        setFunctionToGraph(data.functionToGraph); 
+
         draw(data)
         setError({
             state: false,

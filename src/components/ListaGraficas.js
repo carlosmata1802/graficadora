@@ -1,8 +1,7 @@
 import React, { useEffect, useSate } from 'react';
 
 //const data = JSON.parse(localStorage.getItem("graficas"));
-const data = {
-    graficas: [
+const data = [
         {
             function: '',
             limiteInferior: '', 
@@ -25,8 +24,8 @@ const data = {
             area: ''
         }
     ]
-}
-const { graficas } = data; 
+
+const graficas = [...data]; 
 
 const getUserInfo = async () => {
     const response = await fetch(""); 
@@ -40,11 +39,11 @@ const ListaGraficas = () => {
             <div className="card-body">
                 <h2 className="card-title text-center">{mensaje}</h2>
                 <div className="row lista-grafi">
-                    {graficas.map( grafica => {
+                    {graficas.map(grafica => (
                         <div className="col m4">
                             <div className="content">
                                 <div id="image_small">
-                                    <img src=""/>
+                                    
                                 </div>
                                 <div className="labelsFunctionInfo">
                                     <p>tiítulo</p>
@@ -54,7 +53,7 @@ const ListaGraficas = () => {
                                 </div>
                             </div>
                         </div>
-                    })}
+                    ))}
                 </div>
             </div>
         </div>
